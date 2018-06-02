@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
 import { HomeModule } from './home/home.module';
+import { NotFoundModule } from './not-found/not-found.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HomeModule } from './home/home.module';
     BrowserModule,
     HeaderModule,
     HomeModule,
-    FooterModule
+    NotFoundModule,
+    FooterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
