@@ -1,3 +1,19 @@
-<p>
-  form works!
-</p>
+<h1>How many is your net mensual Salary?</h1>
+<form [formGroup]="salaryForm" (ngSubmit)="onSubmit()">
+  <input
+    type="text"
+    formControlName="salary"
+    >
+  <div *ngIf="!salaryForm.valid && !salaryForm.pristine">
+    <span
+    *ngIf="salaryForm.get('salary').errors['valueTooLow']">C'mon, you're not that poor!</span>
+    <span
+    *ngIf="salaryForm.get('salary').errors['valueTooHigh']">Dude, you're not even this rich.</span>
+    <span
+    *ngIf="salaryForm.get('salary').errors['valueIsNotANumber']">So, you're paid with letters?</span>
+  </div>
+
+  <button
+    type="submit"
+    [disabled]="!salaryForm.valid">It's Moneytime!</button>
+</form>
