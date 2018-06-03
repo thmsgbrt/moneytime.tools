@@ -9,6 +9,8 @@ import { HomeModule } from './home/home.module';
 import { NotFoundModule } from './not-found/not-found.module';
 import { AppRoutingModule } from './app-routing.module';
 import { StatsBoardModule } from './stats-board/stats-board.module';
+import { SalaryConverterService } from './services/salary-conveter.service';
+import { DateService } from './services/date.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import { StatsBoardModule } from './stats-board/stats-board.module';
     AppRoutingModule,
     StatsBoardModule
   ],
-  providers: [],
+  providers: [SalaryConverterService, DateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
