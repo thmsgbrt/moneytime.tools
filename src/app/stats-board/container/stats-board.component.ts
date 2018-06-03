@@ -32,7 +32,7 @@ export class StatsBoardComponent implements OnInit, OnDestroy {
 
     this.timer$ = this.timerService.start().subscribe((val) => {
       console.log(val);
-      this.liveSalaryPerSecond = this.salaryPerSecond * val;
+      this.liveSalaryPerSecond = this.salaryPerSecond * (val + 1);
       this.liveTimer = val;
     });
   }
