@@ -29,8 +29,6 @@ export class SalaryFormatterPipe implements PipeTransform {
             salarySplited[0] = salarySplited[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
             salarySplited.push(salarySplited[1].slice(0,2));
             salarySplited.push(salarySplited[1].slice(2,3));
-            console.log(salary);
-            console.log(salarySplited);
             returningString = `<span class="salary--noticeable">${salarySplited[0]},</span><span class="salary--negligible">${salarySplited[2]}<span class="salary--evenMoreNegligible">${salarySplited[3]}</span></span>`;
         }
     return `<span class="yolo">${returningString} €</span>`;
