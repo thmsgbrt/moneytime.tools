@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { StatsBoardModule } from './stats-board/stats-board.module';
 import { SalaryConverterService } from './services/salary-conveter.service';
 import { DateService } from './services/date.service';
+import { TimerService } from './services/timer.service';
+import { Guard } from './services/guard.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,7 @@ import { DateService } from './services/date.service';
     AppRoutingModule,
     StatsBoardModule
   ],
-  providers: [SalaryConverterService, DateService],
+  providers: [SalaryConverterService, DateService, TimerService, Guard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
