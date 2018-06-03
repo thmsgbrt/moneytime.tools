@@ -13,7 +13,6 @@ import { SalaryConverterService } from './services/salary-conveter.service';
 import { DateService } from './services/date.service';
 import { TimerService } from './services/timer.service';
 import { Guard } from './services/guard.service';
-
 @NgModule({
   declarations: [
     AppComponent

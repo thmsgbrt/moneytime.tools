@@ -31,7 +31,7 @@ export class FormComponent implements OnInit {
   }
 
   valueTooLow(control: FormControl): {[s: string]: boolean} {
-    if (control.value < 100) {
+    if (control.value < 1000) {
       return {'valueTooLow': true};
     }
     return null;

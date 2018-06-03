@@ -1,18 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ActivatedRoute, Params } from '@angular/router';
 import { SalaryConverterService } from '../../services/salary-conveter.service';
+import { TimerService } from '../../services/timer.service';
 
 @Component({
   selector: 'app-stats-board',
   templateUrl: './stats-board.component.html',
   styleUrls: ['./stats-board.component.css']
 })
-export class StatsBoardComponent implements OnInit {
+export class StatsBoardComponent implements OnInit, OnDestroy {
+  timer$;
   salary:number;
   salaryPerSecond:number;
+  liveSalaryPerSecond:number;
+  liveTimer: number;
 
   constructor(private route: ActivatedRoute,
-              private salaryConverter: SalaryConverterService) { }
+              private salaryConverter: SalaryConverterService,
+              private timerService: TimerService) { }
 
   ngOnInit() {
     this.route.params
@@ -23,6 +29,16 @@ export class StatsBoardComponent implements OnInit {
           console.log('salaire', this.salaryPerSecond);
         }
       )
+
+    this.timer$ = this.timerService.start().subscribe((val) => {
+      console.log(val);
+      this.liveSalaryPerSecond = this.salaryPerSecond * val;
+      this.liveTimer = val;
+    });
+  }
+  
+  ngOnDestroy() {
+    this.timer$.unsubscribe();
   }
 
 }
