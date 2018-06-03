@@ -8,6 +8,7 @@ import { FooterModule } from './footer/footer.module';
 import { HomeModule } from './home/home.module';
 import { NotFoundModule } from './not-found/not-found.module';
 import { AppRoutingModule } from './app-routing.module';
+import { StatsBoardModule } from './stats-board/stats-board.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     HomeModule,
     NotFoundModule,
     FooterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StatsBoardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
