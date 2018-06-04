@@ -2,18 +2,14 @@ export class DateService {
     getNumberOfDaysInYear() {
         const date = new Date();
         const currentYear = date.getFullYear();
-        if (currentYear % 400 === 0 || (currentYear % 100 !== 0 && currentYear % 4 === 0)) {
-            return 366;
-        } else {
-            return 365;
-        }
+        return (Date.UTC(currentYear + 1, 0, 1) - Date.UTC(currentYear, 0, 1)) / 24 / 60 / 60 / 1000; 
     }
 
     getNumberOfDaysInMonth(month?: number, year?:number) {
         if (month === undefined) {
             const date = new Date();
             const currentYear = date.getFullYear();
-            const currentMonth = date.getMonth();
+            const currentMonth = date.getMonth() + 1;
             return new Date(currentYear, currentMonth, 0).getDate();    
         }
         return new Date(year, month, 0).getDate();
@@ -32,9 +28,6 @@ export class DateService {
         const currentDay = date.getDate();
         const currentSecondsOfDay = this.getCurrentSecondsOfTheDay();
 
-        // Cassé aussi
-        // Réparer en premier !!!!!!!!!!!!!!
-
         if (currentDay === 1) {
             return currentSecondsOfDay;
         } else {
@@ -46,14 +39,7 @@ export class DateService {
         const date = new Date();
         const currentMonth = date.getMonth() + 1;
         const daysInMonth = this.getNumberOfDaysInMonth();
-        const currentSecondsOfMonth = this.getCurrentSecondsOfTheMonth();
-
-        console.log('///////////');
-        console.log(currentMonth);
-        console.log(currentSecondsOfMonth);
-        console.log('||||||||||||||||///////////');
-        // C'est cassé, à fixer
-        
+        const currentSecondsOfMonth = this.getCurrentSecondsOfTheMonth();        
 
         if (currentMonth === 1) {
             return currentSecondsOfMonth;

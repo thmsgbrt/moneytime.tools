@@ -13,6 +13,8 @@ export class SideStatsComponent implements OnInit, OnChanges {
   daysInCurrentYear: number;
   daysInCurrentMonth: number;
   salaryEndOfDay: number;
+  salaryEndOfMonth: number;
+  salaryEndOfYear: number;
   liveDaySalary: number;
   liveDayPercentage: number;
   liveMonthSalary: number;
@@ -26,6 +28,8 @@ export class SideStatsComponent implements OnInit, OnChanges {
     this.daysInCurrentMonth = this.dateService.getNumberOfDaysInMonth();
     this.daysInCurrentYear = this.dateService.getNumberOfDaysInYear();
     this.setSalaryEndOfDay();
+    this.setSalaryEndOfMonth();
+    this.setSalaryEndOfYear();
   }
 
   ngOnChanges() {
@@ -53,6 +57,14 @@ export class SideStatsComponent implements OnInit, OnChanges {
 
   setSalaryEndOfDay() {
     this.salaryEndOfDay = this.salaryPerSecond * 60 * 60 * 24;
+  }
+
+  setSalaryEndOfMonth() {
+    this.salaryEndOfMonth = this.salaryPerSecond * 60 * 60 * 24 * this.dateService.getNumberOfDaysInMonth();
+  }
+
+  setSalaryEndOfYear() {
+    this.salaryEndOfYear = this.salaryPerSecond * 60 * 60 * 24 * this.dateService.getNumberOfDaysInYear();
   }
 
 }
