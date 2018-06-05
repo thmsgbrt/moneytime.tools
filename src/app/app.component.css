@@ -1,7 +1,7 @@
 .app__container {
     width:calc(100% - 60px);
-    height:calc(100vh - 60px);
-    margin:30px;
+    height:calc(100vh - 94px);
+    margin:0 30px;
     background: #f7f7f7;
 }
 

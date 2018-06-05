@@ -37,14 +37,19 @@ export class DateService {
 
     getCurrentSecondsOfTheYear() {
         const date = new Date();
+        const currentYear = date.getFullYear();
         const currentMonth = date.getMonth() + 1;
-        const daysInMonth = this.getNumberOfDaysInMonth();
+        const currentDay = date.getDate();
         const currentSecondsOfMonth = this.getCurrentSecondsOfTheMonth();        
 
         if (currentMonth === 1) {
             return currentSecondsOfMonth;
         } else {
-            return 86400 * daysInMonth * currentMonth + currentSecondsOfMonth; 
+            let daysSinceBegginingOfTheYear = 0;
+            for (let i = 1; i < currentMonth; i++) {
+                daysSinceBegginingOfTheYear += new Date(currentYear, i, 0).getDate();
+            }
+            return 86400 * daysSinceBegginingOfTheYear + this.getCurrentSecondsOfTheDay(); 
         }
     }
 }

@@ -7,7 +7,7 @@ import { TimerService } from '../../services/timer.service';
 @Component({
   selector: 'app-stats-board',
   templateUrl: './stats-board.component.html',
-  styleUrls: ['./stats-board.component.css']
+  styleUrls: ['./stats-board.component.scss']
 })
 export class StatsBoardComponent implements OnInit, OnDestroy {
   timer$;
@@ -26,12 +26,12 @@ export class StatsBoardComponent implements OnInit, OnDestroy {
         (params: Params) => {
           this.salary = +params['salary'];
           this.salaryPerSecond = this.salaryConverter.getSalaryPerSecond(this.salary);
-          console.log('salaire', this.salaryPerSecond);
+          // console.log('salaire', this.salaryPerSecond);
         }
       )
 
     this.timer$ = this.timerService.start().subscribe((val) => {
-      console.log(val);
+      // console.log(val);
       this.liveSalaryPerSecond = this.salaryPerSecond * (val + 1);
       this.liveTimer = val;
     });

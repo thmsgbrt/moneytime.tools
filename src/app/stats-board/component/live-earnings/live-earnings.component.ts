@@ -3,7 +3,7 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 @Component({
   selector: 'app-live-earnings',
   templateUrl: './live-earnings.component.html',
-  styleUrls: ['./live-earnings.component.css']
+  styleUrls: ['./live-earnings.component.scss']
 })
 export class LiveEarningsComponent implements OnInit, OnChanges {
   @Input() liveSalaryPerSecond: number;

@@ -1,0 +1,26 @@
+:host {
+    display: flex;
+    margin:0 20px;
+    &:first-child {
+        margin-left:0;
+    }
+    &:last-child {
+        margin-right:0;
+    }
+    .example__photo {
+        width:50px;
+        margin-right:15px;
+        img {
+            width:100%;
+            border-radius: 50px;
+        }
+    }
+    .example__details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        span {display: block}
+        .example__details--name {font-weight: 100;font-size: 12px; line-height: 18px}
+        .example__details--salary {font-weight: 500;font-size: 14px; line-height: 18px}
+    }
+}

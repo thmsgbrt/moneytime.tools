@@ -4,7 +4,7 @@ import { DateService } from '../../../services/date.service';
 @Component({
   selector: 'app-side-stats',
   templateUrl: './side-stats.component.html',
-  styleUrls: ['./side-stats.component.css']
+  styleUrls: ['./side-stats.component.scss']
 })
 export class SideStatsComponent implements OnInit, OnChanges {
   @Input() liveSalaryPerSecond: number;
@@ -22,11 +22,12 @@ export class SideStatsComponent implements OnInit, OnChanges {
   liveYearSalary: number;
   liveYearPercentage: number;
 
-  constructor(private dateService: DateService) { }
-
-  ngOnInit() {
+  constructor(private dateService: DateService) {
     this.daysInCurrentMonth = this.dateService.getNumberOfDaysInMonth();
     this.daysInCurrentYear = this.dateService.getNumberOfDaysInYear();
+  }
+
+  ngOnInit() {
     this.setSalaryEndOfDay();
     this.setSalaryEndOfMonth();
     this.setSalaryEndOfYear();
@@ -34,23 +35,24 @@ export class SideStatsComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     this.liveDaySalary = this.currentSalaryToday();
-    this.liveDayPercentage = this.dateService.getCurrentSecondsOfTheDay() * 100 / (60 * 60 * 24);
-
     this.liveMonthSalary = this.currentSalaryMonth();
-    this.liveMonthPercentage = this.dateService.getCurrentSecondsOfTheMonth() * 100 / (60 * 60 * 24 * this.daysInCurrentMonth);
-
     this.liveYearSalary = this.currentSalaryYear();
-    this.liveYearPercentage = this.dateService.getCurrentSecondsOfTheYear() * 100 / (60 * 60 * 24 * this.daysInCurrentMonth * this.daysInCurrentYear);
+    
+    setTimeout(() => {
+      this.liveDayPercentage = this.dateService.getCurrentSecondsOfTheDay() * 100 / (60 * 60 * 24);
+      this.liveMonthPercentage = this.dateService.getCurrentSecondsOfTheMonth() * 100 / (60 * 60 * 24 * this.daysInCurrentMonth);
+      this.liveYearPercentage = this.dateService.getCurrentSecondsOfTheYear() * 100 / (60 * 60 * 24 * this.daysInCurrentYear);
+    },1000);
   }
-
+  
   currentSalaryToday() {
     return this.salaryPerSecond * this.dateService.getCurrentSecondsOfTheDay();
   }
-
+  
   currentSalaryMonth() {
     return this.salaryPerSecond * this.dateService.getCurrentSecondsOfTheMonth();
   }
-
+  
   currentSalaryYear() {
     return this.salaryPerSecond * this.dateService.getCurrentSecondsOfTheYear();
   }

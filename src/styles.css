@@ -62,3 +62,28 @@ body {
 .bold {
 	font-weight:700;
 }
+
+.livesalary--noticeable,
+.livesalary--negligible,
+.livesalary--evenMoreNegligible {
+	font-family: 'Roboto Mono', monospace;
+}
+
+.livesalary--noticeable {
+	opacity: 1;
+}
+.livesalary--negligible {
+	opacity: 0.6;
+}
+.livesalary--evenMoreNegligible {
+	opacity: 0.4;
+}
+
+.liveSalary__container,
+.liveSalary__container	.livesalary--noticeable,
+.liveSalary__container	.livesalary--negligible,
+.liveSalary__container	.livesalary--evenMoreNegligible
+ {
+	font-family: 'Comfortaa', cursive!important;
+	font-size: 90px;
+}

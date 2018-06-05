@@ -1,4 +1,3 @@
-<p>
-  <span [innerHTML]="liveSalaryPerSecond | salaryFormatter"></span>
-  <time>{{ chronometer }}</time>
-</p>
+<span class="liveSalary__container" [innerHTML]="liveSalaryPerSecond | salaryFormatter"></span>
+<br>
+<span>Earned since <time>{{ chronometer }}</time></span>

@@ -1,8 +1,7 @@
-<h2>Interesting stats</h2>
 <div class="stats stats--today">
   <span class="stats__title">Today</span>
   <div class="stats__gauge">
-    <div class="stats__gauge--fill"> {{ liveDayPercentage }}
+    <div class="stats__gauge--fill" [ngStyle]="{'width': liveDayPercentage + '%'}">
     </div>    
   </div>
   <div class="stats__earnings">
@@ -13,7 +12,7 @@
 <div class="stats stats--month">
   <span class="stats__title">Month</span>
   <div class="stats__gauge">
-    <div class="stats__gauge--fill"> {{ liveMonthPercentage }}
+    <div class="stats__gauge--fill" [ngStyle]="{'width': liveMonthPercentage + '%'}">
     </div>    
   </div>
   <div class="stats__earnings">
@@ -24,7 +23,7 @@
 <div class="stats stats--year">
   <span class="stats__title">Year</span>
   <div class="stats__gauge">
-    <div class="stats__gauge--fill"> {{ liveYearPercentage }}
+    <div class="stats__gauge--fill" [ngStyle]="{'width': liveYearPercentage + '%'}">
     </div>    
   </div>
   <div class="stats__earnings">
