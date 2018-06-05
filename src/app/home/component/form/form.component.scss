@@ -1,22 +1,25 @@
 h1 {
-    text-shadow: 1px 4px 4px #3462ab;
     font-size:32px;
     text-transform: uppercase;
     line-height: 43px;
+    color: #302121
 }
 .input__container {
-    border-bottom: 1px dashed white;
+    border-bottom: 1px dashed #302121;
     margin-top:40px;
     margin-bottom: 20px;
     .input--salary {
         background:transparent;
         outline: none;
         border: none;
-        color:white;
+        color:302121;
         font-size:66px;
         font-weight: 100;
         max-width: 390px;
         text-align: right;
+    }
+    .input--currency {
+        font-size:66px;
     }
 }
 
@@ -27,11 +30,11 @@ h1 {
     text-transform: uppercase;
     background-color: #fc6a57;
     transition: all 200ms ease-in;
-    color: #ffd6d1;
+    color: #ffefec;
     font-size: 16px;
     font-weight: 100;
     text-shadow: 1px 3px 3px #9b3729;
-    box-shadow: 1px 3px 3px #3462ab;
+    box-shadow: 1px 3px 3px #969696;
     margin-top:30px;
     cursor:pointer;
     &:hover {
@@ -51,22 +54,24 @@ form.ng-valid {
 @keyframes jump{
     0%{
         transform: translateY(0);
-        box-shadow: 1px 3px 3px #3462ab;
+        box-shadow: 1px 3px 3px #969696;
         }
     50%{
         transform: translateY(-5px);
-        box-shadow: 1px 5px 5px #3462ab;
+        box-shadow: 1px 5px 5px #969696;
         }
 }
 
 
 .errors {
+    height:50px;
+    display: block;
     span {
         display: inline-block;
         margin: 0 10px 10px 0px;
         padding: 10px 20px;
-        background-color: rgba(255, 255, 255, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.5);
+        background-color: rgba(24, 24, 24, 0.3);
+        border: 1px solid rgba(24, 24, 24, 0.5);
         border-radius: 6px;
         font-size: 10px;
     }
