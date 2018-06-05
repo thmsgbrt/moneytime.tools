@@ -1,8 +1,5 @@
 :host {
-    display:block;
-    .home {
-        top: 50%;
-        position: absolute;
-        transform: translateY(-100%);
-    }
+    height: calc(100% - 75px);
+    display: flex;
+    align-items: center;
 }

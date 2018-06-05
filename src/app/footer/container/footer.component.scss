@@ -1,0 +1,17 @@
+footer {
+    display: flex;
+    justify-content: flex-end;
+    color:black;
+    padding:15px 30px;
+    font-size:10px;
+    a {
+        text-decoration: none;
+        color:black;
+        &:visited {
+            color:black;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

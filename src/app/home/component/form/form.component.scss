@@ -7,7 +7,7 @@ h1 {
 .input__container {
     border-bottom: 1px dashed white;
     margin-top:40px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     .input--salary {
         background:transparent;
         outline: none;
@@ -32,10 +32,42 @@ h1 {
     font-weight: 100;
     text-shadow: 1px 3px 3px #9b3729;
     box-shadow: 1px 3px 3px #3462ab;
+    margin-top:30px;
     cursor:pointer;
     &:hover {
-        background-color: #e05846;
+        animation: jump 1s infinite 0s ease;
+        background-color: #ec6553;
         text-shadow: 1px 3px 3px #75271d;
     }
 	
+}
+
+form.ng-valid {
+    .cta {
+        animation: jump 1s infinite 0s ease;
+    }
+}
+
+@keyframes jump{
+    0%{
+        transform: translateY(0);
+        box-shadow: 1px 3px 3px #3462ab;
+        }
+    50%{
+        transform: translateY(-5px);
+        box-shadow: 1px 5px 5px #3462ab;
+        }
+}
+
+
+.errors {
+    span {
+        display: inline-block;
+        margin: 0 10px 10px 0px;
+        padding: 10px 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 6px;
+        font-size: 10px;
+    }
 }

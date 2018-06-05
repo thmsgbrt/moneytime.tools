@@ -22,12 +22,12 @@ export class FormComponent implements OnInit {
       ])
     });
 
-    this.salaryForm.statusChanges.subscribe(
-      (status) => {
-        console.log(status);
-        console.log(this.salaryForm)
-      }
-    );
+    // this.salaryForm.statusChanges.subscribe(
+    //   (status) => {
+    //     console.log(status);
+    //     console.log(this.salaryForm)
+    //   }
+    // );
   }
 
   valueTooLow(control: FormControl): {[s: string]: boolean} {

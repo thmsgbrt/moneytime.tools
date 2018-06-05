@@ -15,7 +15,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         opacity: 1,        
         transform: 'translateX(100px)'
       })),
-      transition('start <=> fadedIn', animate('600ms ease-out')),
+      transition('start <=> fadedIn', animate('500ms ease-out')),
     ])
   ]
 })
