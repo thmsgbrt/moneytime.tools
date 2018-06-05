@@ -51,6 +51,14 @@ table {
 
 body {
     font-family: 'Comfortaa', cursive;
-    font-weight: 300;
+    font-weight: 100;
     color: white;
+}
+
+.semi-bold {
+	font-weight:500;
+}
+
+.bold {
+	font-weight:700;
 }

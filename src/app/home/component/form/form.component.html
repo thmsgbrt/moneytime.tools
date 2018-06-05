@@ -1,9 +1,14 @@
-<h1>How many is your <span class="bold">net mensual salary?</span></h1>
+<h1>How many is your<br><span class="bold">net mensual salary?</span></h1>
 <form [formGroup]="salaryForm" (ngSubmit)="onSubmit()">
-  <input
-    type="text"
-    formControlName="salary"
-    >
+  <div class="input__container">
+    <input
+      class="input--salary"
+      type="text"
+      formControlName="salary"
+      maxlength="10"
+      >
+      <span class="input--currency">€</span>
+  </div>
   <div *ngIf="!salaryForm.valid && !salaryForm.pristine">
     <span
     *ngIf="salaryForm.get('salary').errors['valueTooLow']">C'mon, you're not that poor!</span>
@@ -15,5 +20,6 @@
 
   <button
     type="submit"
-    [disabled]="!salaryForm.valid">It's Moneytime!</button>
+    class="cta"
+    [disabled]="!salaryForm.valid">It's <span class="semi-bold">Moneytime!</span></button>
 </form>

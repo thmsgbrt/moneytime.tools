@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
@@ -13,6 +12,7 @@ import { SalaryConverterService } from './services/salary-conveter.service';
 import { DateService } from './services/date.service';
 import { TimerService } from './services/timer.service';
 import { Guard } from './services/guard.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent
@@ -24,7 +24,8 @@ import { Guard } from './services/guard.service';
     NotFoundModule,
     FooterModule,
     AppRoutingModule,
-    StatsBoardModule
+    StatsBoardModule,
+    BrowserAnimationsModule
   ],
   providers: [SalaryConverterService, DateService, TimerService, Guard],
   bootstrap: [AppComponent]

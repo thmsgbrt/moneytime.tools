@@ -1,6 +1,41 @@
 h1 {
-    text-shadow: 0px 3px 9px #4779c9; 
-    .bold {
-        font-weight:700;
+    text-shadow: 1px 4px 4px #3462ab;
+    font-size:32px;
+    text-transform: uppercase;
+    line-height: 43px;
+}
+.input__container {
+    border-bottom: 1px dashed white;
+    margin-top:40px;
+    margin-bottom: 50px;
+    .input--salary {
+        background:transparent;
+        outline: none;
+        border: none;
+        color:white;
+        font-size:66px;
+        font-weight: 100;
+        max-width: 390px;
+        text-align: right;
     }
+}
+
+.cta {
+    padding: 11px 30px;
+    border-radius: 18px;
+    border: none;
+    text-transform: uppercase;
+    background-color: #fc6a57;
+    transition: all 200ms ease-in;
+    color: #ffd6d1;
+    font-size: 16px;
+    font-weight: 100;
+    text-shadow: 1px 3px 3px #9b3729;
+    box-shadow: 1px 3px 3px #3462ab;
+    cursor:pointer;
+    &:hover {
+        background-color: #e05846;
+        text-shadow: 1px 3px 3px #75271d;
+    }
+	
 }

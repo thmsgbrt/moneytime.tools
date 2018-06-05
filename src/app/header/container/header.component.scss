@@ -1,0 +1,14 @@
+:host {
+    display:block;
+    &:after {
+        content: '';
+        display: block;
+        background-image: radial-gradient(closest-side, rgba(255,255,255,0.01),rgba(255,255,255,0.01), rgba(255,255,255,0.2) );
+        width:800px;
+        height:800px;
+        border-radius: 50%;
+        position: absolute;
+        top:-400px;
+        left: -300px;
+    }
+}
