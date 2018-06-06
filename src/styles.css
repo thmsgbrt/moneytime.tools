@@ -55,6 +55,11 @@ body {
     color: #302121;
 }
 
+h2 {
+	text-align: center;
+	font-weight: 500;
+}
+
 .semi-bold {
 	font-weight:500;
 }
@@ -86,4 +91,23 @@ body {
  {
 	font-family: 'Comfortaa', cursive!important;
 	font-size: 90px;
+}
+
+@media screen and (max-width: 950px) {
+	.liveSalary__container,
+	.liveSalary__container	.livesalary--noticeable,
+	.liveSalary__container	.livesalary--negligible,
+	.liveSalary__container	.livesalary--evenMoreNegligible
+	{
+		font-size: 60px;
+	}
+}
+@media screen and (max-width: 650px) {
+	.liveSalary__container,
+	.liveSalary__container	.livesalary--noticeable,
+	.liveSalary__container	.livesalary--negligible,
+	.liveSalary__container	.livesalary--evenMoreNegligible
+	{
+		font-size: 40px;
+	}
 }

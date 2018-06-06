@@ -9,16 +9,15 @@
       >
       <span class="input--currency">€</span>
   </div>
-  <div class="errors" >
-      <div *ngIf="!salaryForm.valid && !salaryForm.pristine">
-        <span
-        *ngIf="!salaryForm.pristine && salaryForm.get('salary').value !== '' && salaryForm.get('salary').errors['valueTooLow']">C'mon, you're not that poor!</span>
-        <span
-        *ngIf="!salaryForm.pristine && salaryForm.get('salary').errors['valueTooHigh']">Dude, you're not even this rich.</span>
-        <span
-        *ngIf="!salaryForm.pristine && salaryForm.get('salary').errors['valueIsNotANumber']">So, you're paid with letters?</span>
-      </div>
-    </div>
+  <hr>
+  <div class="errors" *ngIf="!salaryForm.valid && !salaryForm.pristine">
+      <span
+      *ngIf="!salaryForm.pristine && salaryForm.get('salary').value !== '' && salaryForm.get('salary').errors['valueTooLow']">C'mon, you're not that poor!</span>
+      <span
+      *ngIf="!salaryForm.pristine && salaryForm.get('salary').errors['valueTooHigh']">Dude, you're not even this rich.</span>
+      <span
+      *ngIf="!salaryForm.pristine && salaryForm.get('salary').errors['valueIsNotANumber']">So, you're paid with letters?</span>
+  </div>
   <button
   type="submit"
   class="cta"

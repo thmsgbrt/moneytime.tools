@@ -1,6 +1,28 @@
 :host {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    
+    hr {
+        border: none;
+        border-bottom: 1px dashed #302121;
+        width:50px;
+        margin-bottom: 20px;
+    }
+    .app-example__container{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    app-example {
+        @media screen and (max-width: 850px) {
+            &:last-child {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 450px) {
+            &:last-child {
+                display: none;
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+    }
 }

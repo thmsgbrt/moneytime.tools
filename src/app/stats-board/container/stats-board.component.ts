@@ -3,11 +3,23 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute, Params } from '@angular/router';
 import { SalaryConverterService } from '../../services/salary-conveter.service';
 import { TimerService } from '../../services/timer.service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-stats-board',
   templateUrl: './stats-board.component.html',
-  styleUrls: ['./stats-board.component.scss']
+  styleUrls: ['./stats-board.component.scss'],
+  animations: [
+    trigger('divFadeIn', [
+      state('start', style({
+        opacity: 0
+      })),
+      state('fadedIn', style({
+        opacity: 1
+      })),
+      transition('start <=> fadedIn', animate('500ms ease-out')),
+    ])
+  ]
 })
 export class StatsBoardComponent implements OnInit, OnDestroy {
   timer$;
@@ -15,12 +27,16 @@ export class StatsBoardComponent implements OnInit, OnDestroy {
   salaryPerSecond:number;
   liveSalaryPerSecond:number;
   liveTimer: number;
+  state = 'start';
 
   constructor(private route: ActivatedRoute,
               private salaryConverter: SalaryConverterService,
               private timerService: TimerService) { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.state === 'start' ? this.state ="fadedIn" : this.state ="start";
+    },400);
     this.route.params
       .subscribe(
         (params: Params) => {

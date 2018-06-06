@@ -1,8 +1,11 @@
 <app-side-stats
   [liveSalaryPerSecond]="liveSalaryPerSecond"
   [liveTimer]="liveTimer"
-  [salaryPerSecond]="salaryPerSecond"></app-side-stats>
+  [salaryPerSecond]="salaryPerSecond"
+  [@divFadeIn]="state"></app-side-stats>
 <app-live-earnings
   [liveSalaryPerSecond]="liveSalaryPerSecond"
-  [liveTimer]="liveTimer"></app-live-earnings>
-  <app-salary-examples></app-salary-examples>
+  [liveTimer]="liveTimer"
+  [@divFadeIn]="state"></app-live-earnings>
+  <app-salary-examples
+  [@divFadeIn]="state"></app-salary-examples>

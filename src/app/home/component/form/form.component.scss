@@ -1,11 +1,23 @@
+
+:host {
+    display:block;
+    max-width:500px;
+    position: relative;
+    top:100px;
+}
 h1 {
     font-size:32px;
     text-transform: uppercase;
     line-height: 43px;
     color: #302121
 }
-.input__container {
+hr {
+    border: none;
     border-bottom: 1px dashed #302121;
+    max-width: 453px;
+    margin: 0;
+}
+.input__container {
     margin-top:40px;
     margin-bottom: 20px;
     .input--salary {
@@ -24,8 +36,8 @@ h1 {
 }
 
 .cta {
-    padding: 11px 30px;
-    border-radius: 18px;
+    padding: 15px 45px;
+    border-radius: 82px;
     border: none;
     text-transform: uppercase;
     background-color: #fc6a57;
@@ -34,9 +46,10 @@ h1 {
     font-size: 16px;
     font-weight: 100;
     text-shadow: 1px 3px 3px #9b3729;
-    box-shadow: 1px 3px 3px #969696;
-    margin-top:30px;
+    box-shadow: 1px 3px 3px #d8d8d8;
+    margin-top:60px;
     cursor:pointer;
+    outline: none;
     &:hover {
         animation: jump 1s infinite 0s ease;
         background-color: #ec6553;
@@ -54,11 +67,11 @@ form.ng-valid {
 @keyframes jump{
     0%{
         transform: translateY(0);
-        box-shadow: 1px 3px 3px #969696;
+        box-shadow: 1px 3px 3px #d8d8d8;
         }
     50%{
         transform: translateY(-5px);
-        box-shadow: 1px 5px 5px #969696;
+        box-shadow: 1px 5px 15px #bfbfbf;
         }
 }
 
@@ -66,13 +79,31 @@ form.ng-valid {
 .errors {
     height:50px;
     display: block;
+    margin-top:45px;
+    position: relative;
     span {
+        &:before {
+            content: '';
+            position: absolute;
+            border: solid transparent;
+            border-width: 20px 20px 0 0;
+            padding: 7px;
+            box-shadow: -1px 1px 0 0 rgba(24, 24, 24, 0.5) inset;
+            -webkit-box-shadow: -1px 1px 0 0 rgba(24, 24, 24, 0.5) inset;
+            -webkit-transform: rotate(45deg);
+            margin-left: 0%;
+            margin-top: 0px;
+            transform: rotate(315deg);
+            top: -31px;
+            background-color: #f7f7f7;
+            left:15px;
+        }
         display: inline-block;
         margin: 0 10px 10px 0px;
-        padding: 10px 20px;
-        background-color: rgba(24, 24, 24, 0.3);
+        padding: 21px 38px;
         border: 1px solid rgba(24, 24, 24, 0.5);
         border-radius: 6px;
-        font-size: 10px;
+        font-size: 14px;
+        font-weight: 500;
     }
 }

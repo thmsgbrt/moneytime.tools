@@ -8,6 +8,19 @@
     display: block;
     width:250px;
     margin:0 20px;
+    @media screen and (max-width: 950px) {
+        &:last-child {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 650px) {
+        &:last-child {
+            display: none;
+        }
+        &:nth-child(2) {
+            display: none;
+        }
+    }
     &:first-child {
         margin-left:0;
     }
