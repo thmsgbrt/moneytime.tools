@@ -9,17 +9,25 @@ h1 {
     font-size:32px;
     text-transform: uppercase;
     line-height: 43px;
-    color: #302121
+    color: #302121;
+    @media screen and (max-width: 650px) {
+        font-size:18px;
+        line-height: 21px;        
+    }
 }
 hr {
     border: none;
     border-bottom: 1px dashed #302121;
     max-width: 453px;
     margin: 0;
+    @media screen and (max-width: 850px) {
+        width:256px;       
+    }
 }
 .input__container {
     margin-top:40px;
     margin-bottom: 20px;
+    display:flex;
     .input--salary {
         background:transparent;
         outline: none;
@@ -27,8 +35,12 @@ hr {
         color:302121;
         font-size:66px;
         font-weight: 100;
-        max-width: 390px;
+        width: 390px;
         text-align: right;
+        @media screen and (max-width: 850px) {
+            width:200px;     
+            padding:0;      
+        }
     }
     .input--currency {
         font-size:66px;

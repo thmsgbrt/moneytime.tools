@@ -8,8 +8,8 @@ import { Guard } from "./services/guard.service";
 const routes:Routes = [
     { path: '', component: HomeComponent },
     { path: 'salary/:salary', component: StatsBoardComponent, canActivate: [Guard] },
-    { path: '404', component: NotFoundComponent },
-    { path: '**', redirectTo: '/404' }
+    // { path: '404', component: NotFoundComponent },
+    { path: '**', redirectTo: '' }
 ]
 
 @NgModule({
