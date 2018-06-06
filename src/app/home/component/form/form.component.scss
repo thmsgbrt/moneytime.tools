@@ -28,17 +28,19 @@ hr {
     margin-top:40px;
     margin-bottom: 20px;
     display:flex;
+    align-items: flex-end;
     .input--salary {
         background:transparent;
         outline: none;
         border: none;
-        color:302121;
+        color:#302121;
         font-size:66px;
         font-weight: 100;
-        width: 390px;
+        width: 350px;
+        padding-right:20px;
         text-align: right;
         @media screen and (max-width: 850px) {
-            width:200px;     
+            width:180px;     
             padding:0;      
         }
     }
@@ -57,7 +59,7 @@ hr {
     color: #ffefec;
     font-size: 16px;
     font-weight: 100;
-    text-shadow: 1px 3px 3px #9b3729;
+    text-shadow: 1px 3px 4px #9b3729;
     box-shadow: 1px 3px 3px #d8d8d8;
     margin-top:60px;
     cursor:pointer;

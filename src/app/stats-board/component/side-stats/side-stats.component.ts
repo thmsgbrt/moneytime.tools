@@ -28,15 +28,16 @@ export class SideStatsComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.setSalaryEndOfDay();
-    this.setSalaryEndOfMonth();
-    this.setSalaryEndOfYear();
+
   }
 
   ngOnChanges() {
     this.liveDaySalary = this.currentSalaryToday();
     this.liveMonthSalary = this.currentSalaryMonth();
     this.liveYearSalary = this.currentSalaryYear();
+    this.setSalaryEndOfDay();
+    this.setSalaryEndOfMonth();
+    this.setSalaryEndOfYear();
     
     setTimeout(() => {
       this.liveDayPercentage = this.dateService.getCurrentSecondsOfTheDay() * 100 / (60 * 60 * 24);

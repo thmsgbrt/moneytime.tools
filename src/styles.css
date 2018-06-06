@@ -68,6 +68,10 @@ h2 {
 	font-weight:700;
 }
 
+button {
+	font-family: 'Roboto Mono', monospace;
+}
+
 .livesalary--noticeable,
 .livesalary--negligible,
 .livesalary--evenMoreNegligible {

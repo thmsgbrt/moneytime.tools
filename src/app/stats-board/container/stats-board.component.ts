@@ -26,8 +26,9 @@ export class StatsBoardComponent implements OnInit, OnDestroy {
   salary:number;
   salaryPerSecond:number;
   liveSalaryPerSecond:number;
-  liveTimer: number;
+  liveTimer: number = 0;
   state = 'start';
+  routeParam;
 
   constructor(private route: ActivatedRoute,
               private salaryConverter: SalaryConverterService,
@@ -37,24 +38,36 @@ export class StatsBoardComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.state === 'start' ? this.state ="fadedIn" : this.state ="start";
     },400);
-    this.route.params
+    this.routeParam = this.route.params
       .subscribe(
         (params: Params) => {
           this.salary = +params['salary'];
           this.salaryPerSecond = this.salaryConverter.getSalaryPerSecond(this.salary);
-          // console.log('salaire', this.salaryPerSecond);
         }
       )
 
     this.timer$ = this.timerService.start().subscribe((val) => {
-      // console.log(val);
-      this.liveSalaryPerSecond = this.salaryPerSecond * (val + 1);
-      this.liveTimer = val;
+      this.liveSalaryPerSecond = this.salaryPerSecond * (this.liveTimer + 1);
+      this.liveTimer++;
     });
   }
   
   ngOnDestroy() {
     this.timer$.unsubscribe();
+  }
+
+  onRestartLiveEarnings () {
+    this.liveSalaryPerSecond = 0;
+    this.liveTimer = 0;
+    this.timer$.unsubscribe();
+    this.timer$ = this.timerService.start().subscribe((val) => {
+      this.liveSalaryPerSecond = this.salaryPerSecond * (this.liveTimer + 1);
+      this.liveTimer++;
+    });
+  }
+
+  onRestartTimer() {
+    this.onRestartLiveEarnings();
   }
 
 }

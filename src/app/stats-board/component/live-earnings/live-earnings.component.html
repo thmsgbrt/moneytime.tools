@@ -1,3 +1,5 @@
 <span class="liveSalary__container" [innerHTML]="liveSalaryPerSecond | salaryFormatter"></span>
 <br>
-<span>Earned since <time>{{ chronometer }}</time></span>
+<span>Earned for <time>{{ chronometer }}.</time></span>
+<br>
+<button class="restartTimer" (click)="onClickRestart()"><img style="width:14px;" src="assets/images/chronometer.svg" alt=""> Restart Timer</button>

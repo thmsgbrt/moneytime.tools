@@ -2,4 +2,21 @@
     display: block;
     width:100%;
     text-align: center;
+    .restartTimer {
+        background:none;
+        border:none;
+        outline: none;
+        margin-top:10px;
+        opacity: 0.5;
+        transition: opacity 400ms;
+        cursor: pointer;
+        text-transform: uppercase;
+        &:hover {
+            opacity: 0.8;
+        }
+        img {
+            margin-bottom: -3px;
+            margin-right: 5px;
+        }
+    }
 }

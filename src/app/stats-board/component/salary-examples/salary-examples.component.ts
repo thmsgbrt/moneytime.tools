@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-salary-examples',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./salary-examples.component.scss']
 })
 export class SalaryExamplesComponent implements OnInit {
+  @Output() restartTimer: EventEmitter<any> = new EventEmitter();
   examplesData = [
     {
       name: "C. Ronaldo",
@@ -30,6 +31,10 @@ export class SalaryExamplesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onRestartTimer() {
+    this.restartTimer.emit();
   }
 
 }

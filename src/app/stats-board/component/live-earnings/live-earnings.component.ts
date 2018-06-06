@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-live-earnings',
@@ -8,6 +8,7 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 export class LiveEarningsComponent implements OnInit, OnChanges {
   @Input() liveSalaryPerSecond: number;
   @Input() liveTimer: number;
+  @Output() restartLiveTimer: EventEmitter<any> = new EventEmitter()
   chronometer: string;
 
   constructor() { }
@@ -19,6 +20,10 @@ export class LiveEarningsComponent implements OnInit, OnChanges {
     if (this.liveTimer != undefined) {
       this.chronometer = new Date(this.liveTimer * 1000).toISOString().substr(11, 8);
     }
+  }
+
+  onClickRestart() {
+    this.restartLiveTimer.emit();
   }
 
 }

@@ -6,6 +6,8 @@
 <app-live-earnings
   [liveSalaryPerSecond]="liveSalaryPerSecond"
   [liveTimer]="liveTimer"
-  [@divFadeIn]="state"></app-live-earnings>
+  [@divFadeIn]="state"
+  (restartLiveTimer)="onRestartLiveEarnings()"></app-live-earnings>
   <app-salary-examples
-  [@divFadeIn]="state"></app-salary-examples>
+  [@divFadeIn]="state"
+  (restartTimer)="onRestartTimer()"></app-salary-examples>
