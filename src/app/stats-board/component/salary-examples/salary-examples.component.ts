@@ -9,12 +9,6 @@ export class SalaryExamplesComponent implements OnInit {
   @Output() restartTimer: EventEmitter<any> = new EventEmitter();
   examplesData = [
     {
-      name: "C. Ronaldo",
-      salary: "6,610,000€",
-      img: "assets/cristiano.jpg",
-      link: "/salary/6610000"
-    },
-    {
       name: "E. Macron",
       salary: "17,000€",
       img: "assets/macron.jpg",
@@ -22,9 +16,15 @@ export class SalaryExamplesComponent implements OnInit {
     },
     {
       name: "T. Cook",
-      salary: "12,800,000€",
+      salary: "890,000€",
       img: "assets/cook.jpg",
-      link: "/salary/12800000"      
+      link: "/salary/890000"      
+    },
+    {
+      name: "C. Ronaldo",
+      salary: "1,750,000€",
+      img: "assets/cristiano.jpg",
+      link: "/salary/1750000"
     }
   ];
 
