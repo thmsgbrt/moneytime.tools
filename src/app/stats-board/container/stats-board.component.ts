@@ -42,7 +42,7 @@ export class StatsBoardComponent implements OnInit, OnDestroy {
       .subscribe(
         (params: Params) => {
           this.salary = +params['salary'];
-          this.salaryPerSecond = this.salaryConverter.getSalaryPerSecond(this.salary);
+          this.salaryPerSecond = this.salaryConverter.getSalaryPerSecondMonth(this.salary);
         }
       )
 

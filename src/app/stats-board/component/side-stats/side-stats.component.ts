@@ -7,6 +7,7 @@ import { DateService } from '../../../services/date.service';
   styleUrls: ['./side-stats.component.scss']
 })
 export class SideStatsComponent implements OnInit, OnChanges {
+  @Input() salary: number;
   @Input() liveSalaryPerSecond: number;
   @Input() liveTimer: number;
   @Input() salaryPerSecond: number;
@@ -55,7 +56,11 @@ export class SideStatsComponent implements OnInit, OnChanges {
   }
   
   currentSalaryYear() {
-    return this.salaryPerSecond * this.dateService.getCurrentSecondsOfTheYear();
+    const monthsPassed = new Date().getMonth(); // No +1 since we want the number of month passed
+    const salaryForMonthsPassed = monthsPassed * this.salary;
+    const currentSalaryMonth = this.currentSalaryMonth();
+
+    return salaryForMonthsPassed + currentSalaryMonth;
   }
 
   setSalaryEndOfDay() {
@@ -67,7 +72,7 @@ export class SideStatsComponent implements OnInit, OnChanges {
   }
 
   setSalaryEndOfYear() {
-    this.salaryEndOfYear = this.salaryPerSecond * 60 * 60 * 24 * this.dateService.getNumberOfDaysInYear();
+    this.salaryEndOfYear = this.salary * 12;
   }
 
 }

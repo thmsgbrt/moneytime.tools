@@ -6,7 +6,7 @@ import { DateService } from "./date.service";
 export class SalaryConverterService {
     constructor(private dateService: DateService) {}
 
-    getSalaryPerSecond(salary:number) {
+    getSalaryPerSecondMonth(salary:number) {
         const currentMonth = new Date().getMonth();
         const currentYear = new Date().getFullYear();
         const daysInCurrentMonth = this.dateService.getNumberOfDaysInMonth();
